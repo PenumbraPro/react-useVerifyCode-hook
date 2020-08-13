@@ -4,6 +4,7 @@
 module.exports = {
   clearMocks: true,
   collectCoverage: true,
+  collectCoverageFrom: ["./*.{(js,ts,tsx)}"],
   coverageDirectory: "coverage",
   coveragePathIgnorePatterns: ["\\\\node_modules\\\\"],
   coverageProvider: "v8",

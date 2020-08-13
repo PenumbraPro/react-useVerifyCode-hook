@@ -16,6 +16,9 @@
     "Verify Code",
     "Mobile"
   ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "author": "Linbudu",
   "license": "MIT",
   "bugs": {
