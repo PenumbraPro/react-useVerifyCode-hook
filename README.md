@@ -1,9 +1,9 @@
 # react-useVerifyCode-hook
-> 适用于验证码场景的React Hooks
 
-## Usage 
+> 适用于验证码场景的 React Hooks.  
+> React Hooks For Verify Code Sending & Status Controll
 
-> **Unplublished!**
+## Usage
 
 ```bash
 npm install use-verify-code -S
@@ -11,9 +11,7 @@ npm install use-verify-code -S
 yarn add use-verify-code
 ```
 
-
-
-
+Plz use [CodeSandBox Demo](https://codesandbox.io/s/useverifycode-hook-9pb2x?file=/src/App.tsx:0-449) for praticing.
 
 ```tsx
 import React from "react";
@@ -38,14 +36,11 @@ export default function App() {
     </>
   );
 }
-
 ```
 
 - use `status` to toggle component status(`verify code button usually`).
 - use `setTarget` to begin interval.
 - use `current` to track current count.
-
-
 
 ### Interface
 
@@ -63,13 +58,3 @@ type TUseVerifyCode = (
   status: boolean; // interval status
 };
 ```
-
-
-
-
-
-
-
-Plz use [CodeSandBox Demo](https://codesandbox.io/s/useverifycode-hook-9pb2x?file=/src/App.tsx:0-449) for praticing.
-
-

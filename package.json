@@ -1,10 +1,11 @@
 {
-  "name": "react-useVerifyCode-hook",
+  "name": "use-verify-code",
   "version": "0.0.1",
   "description": "React Hooks For Verify Code Sending & Status Controll. 适用于验证码场景的React Hooks",
   "main": "index.js",
   "scripts": {
-    "test": "jest --forceExit"
+    "test": "jest --forceExit",
+    "tsc": "tsc"
   },
   "repository": {
     "type": "git",
