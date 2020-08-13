@@ -1,31 +1,31 @@
-import { act, renderHook } from '@testing-library/react-hooks';
+import { act, renderHook } from "@testing-library/react-hooks";
 
-import useVerifyCode, { Opts } from '../../src/hooks/useVerifyCode';
+import useVerifyCode, { Opts } from "./index";
 
 const init = (start?: number, options?: Opts) =>
   renderHook(() => useVerifyCode(start, options));
 
-describe('useVerifyCode Hook', () => {
+describe("useVerifyCode Hook", () => {
   jest.useFakeTimers();
-  it('should have correct value when initialized with no params', () => {
+  it("should have correct value when initialized with no params", () => {
     const { result } = init();
     const { count, setTarget, status } = result.current;
 
     expect(count).toBe(60);
-    expect(typeof setTarget).toBe('function');
+    expect(typeof setTarget).toBe("function");
     expect(status).toBeFalsy();
   });
 
-  it('should have correct value when initialized with params', () => {
+  it("should have correct value when initialized with params", () => {
     const { result } = init(5, { interval: 500 });
     const { count, setTarget, status } = result.current;
 
     expect(count).toBe(5);
-    expect(typeof setTarget).toBe('function');
+    expect(typeof setTarget).toBe("function");
     expect(status).toBeFalsy();
   });
 
-  it('should work normal when invoke setTarget with no params', async () => {
+  it("should work normal when invoke setTarget with no params", async () => {
     const { result } = init(5, { interval: 50 });
 
     act(() => {
@@ -43,7 +43,7 @@ describe('useVerifyCode Hook', () => {
     expect(statusRestart).toBeFalsy();
   });
 
-  it('should work normal when invoke setTarget with no params', async () => {
+  it("should work normal when invoke setTarget with no params", async () => {
     const { result } = init(5, { interval: 50 });
 
     act(() => {

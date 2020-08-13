@@ -1,0 +1,38 @@
+{
+  "name": "react-useVerifyCode-hook",
+  "version": "0.0.1",
+  "description": "React Hooks For Verify Code Sending & Status Controll. 适用于验证码场景的React Hooks",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --forceExit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linbudu599/react-useVerifyCode-hook.git"
+  },
+  "keywords": [
+    "React Hooks",
+    "Verify Code",
+    "Mobile"
+  ],
+  "author": "Linbudu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/linbudu599/react-useVerifyCode-hook/issues"
+  },
+  "homepage": "https://github.com/linbudu599/react-useVerifyCode-hook#readme",
+  "dependencies": {
+    "@testing-library/react-hooks": "^3.3.0",
+    "react": "^16.13.1",
+    "react-test-renderer": "^16.13.1",
+    "typescript": "^3.9.7"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.9",
+    "@types/node": "^14.0.27",
+    "@types/react": "^16.9.46",
+    "codecov": "^3.7.2",
+    "jest": "^26.4.0",
+    "ts-jest": "^26.2.0"
+  }
+}
