@@ -30,4 +30,4 @@ jobs:
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         run: |
-          node_modules/.bin/codecov -t CODECOV_TOKEN
+          node_modules/.bin/codecov -t d3793897-58cd-4893-9375-7471e0418ed3
