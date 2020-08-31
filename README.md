@@ -14,28 +14,26 @@ yarn add use-verify-code
 Plz use [CodeSandBox Demo](https://codesandbox.io/s/useverifycode-hook-9pb2x?file=/src/App.tsx:0-449) for praticing.
 
 ```tsx
-import React from "react";
-import useVerifyCode from "use-verify-code";
+import React from 'react';
+import useVerifyCode from './hooks/useVC';
 
 export default function App() {
-  const [current, setTarget, status] = useVerifyCode(5);
+  const { current, setTarget, status } = useVerifyCode(3, { interval: 1000 });
 
   return (
     <>
-      {!status ? (
-        <button
-          onClick={() => {
-            setTarget();
-          }}
-        >
-          send verify code
-        </button>
-      ) : (
-        <button>send again ({current})</button>
-      )}
+      <button
+        onClick={() => {
+          setTarget();
+        }}
+        disabled={status}
+      >
+        {status ? `Send Again In ${current} s` : 'Send Verify Code'}
+      </button>
     </>
   );
 }
+
 ```
 
 - use `status` to toggle component status(`verify code button usually`).

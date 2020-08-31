@@ -1,16 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, useCallback } from "react";
 
-let countInterval: any = null;
-
-export interface Opts {
+export interface IOpts {
   interval?: number;
 }
 
 export type TUseVerifyCode = (
   start?: number,
-  options?: Opts
+  options?: IOpts
 ) => {
-  count: number;
+  current: number;
   setTarget: (end?: number) => void;
   status: boolean;
 };
@@ -23,27 +21,29 @@ const useVerifyCode: TUseVerifyCode = (start, options) => {
   const [end, setEnd] = useState<number>(0);
   const [status, setStatus] = useState<boolean>(false);
 
+  const timerRef = useRef<any>();
+
   const intervalCaller = () => {
-    countInterval = setInterval(() => {
+    timerRef.current = setInterval(() => {
       if (count - 1 === end) {
-        clearInterval(countInterval);
+        clearInterval(timerRef.current);
         return setStatus(false);
       }
       setCount(count - 1);
     }, interval);
   };
 
-  const setTarget = (end: number = 0): void => {
+  const setTarget = useCallback((end: number = 0): void => {
     setStatus(true);
     setEnd(end);
-  };
+  }, []);
 
   useEffect(() => {
     status ? intervalCaller() : setCount(begin);
-    return () => clearInterval(countInterval);
+    return () => clearInterval(timerRef.current);
   }, [count, status]);
 
-  return { count, setTarget, status };
+  return { current: count, setTarget, status };
 };
 
 export default useVerifyCode;

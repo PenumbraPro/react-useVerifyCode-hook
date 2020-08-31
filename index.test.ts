@@ -1,8 +1,8 @@
 import { act, renderHook } from "@testing-library/react-hooks";
 
-import useVerifyCode, { Opts } from "./index";
+import useVerifyCode, { IOpts } from "./index";
 
-const init = (start?: number, options?: Opts) =>
+const init = (start?: number, options?: IOpts) =>
   renderHook(() => useVerifyCode(start, options));
 
 describe("useVerifyCode Hook", () => {
