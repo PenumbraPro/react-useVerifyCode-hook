@@ -9,18 +9,18 @@ describe("useVerifyCode Hook", () => {
   jest.useFakeTimers();
   it("should have correct value when initialized with no params", () => {
     const { result } = init();
-    const { count, setTarget, status } = result.current;
+    const { current, setTarget, status } = result.current;
 
-    expect(count).toBe(60);
+    expect(current).toBe(60);
     expect(typeof setTarget).toBe("function");
     expect(status).toBeFalsy();
   });
 
   it("should have correct value when initialized with params", () => {
     const { result } = init(5, { interval: 500 });
-    const { count, setTarget, status } = result.current;
+    const { current, setTarget, status } = result.current;
 
-    expect(count).toBe(5);
+    expect(current).toBe(5);
     expect(typeof setTarget).toBe("function");
     expect(status).toBeFalsy();
   });
@@ -33,13 +33,16 @@ describe("useVerifyCode Hook", () => {
     });
 
     jest.advanceTimersByTime(200);
-    const { count: countBeforeEnd, status: statusBeforeEnd } = result.current;
-    expect(countBeforeEnd).toBe(1);
+    const {
+      current: currentBeforeEnd,
+      status: statusBeforeEnd,
+    } = result.current;
+    expect(currentBeforeEnd).toBe(1);
     expect(statusBeforeEnd).toBeTruthy();
 
     jest.advanceTimersByTime(80);
-    const { count: countRestart, status: statusRestart } = result.current;
-    expect(countRestart).toBe(5);
+    const { current: currentRestart, status: statusRestart } = result.current;
+    expect(currentRestart).toBe(5);
     expect(statusRestart).toBeFalsy();
   });
 
@@ -51,13 +54,16 @@ describe("useVerifyCode Hook", () => {
     });
 
     jest.advanceTimersByTime(150);
-    const { count: countBeforeEnd, status: statusBeforeEnd } = result.current;
-    expect(countBeforeEnd).toBe(2);
+    const {
+      current: currentBeforeEnd,
+      status: statusBeforeEnd,
+    } = result.current;
+    expect(currentBeforeEnd).toBe(2);
     expect(statusBeforeEnd).toBeTruthy();
 
     jest.advanceTimersByTime(80);
-    const { count: countRestart, status: statusRestart } = result.current;
-    expect(countRestart).toBe(5);
+    const { current: currentRestart, status: statusRestart } = result.current;
+    expect(currentRestart).toBe(5);
     expect(statusRestart).toBeFalsy();
   });
 });

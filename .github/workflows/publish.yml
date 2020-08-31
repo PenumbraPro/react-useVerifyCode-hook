@@ -12,8 +12,8 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.x, 12.x]
-        os: [ubuntu-latest, macos-latest, windows-latest]
+        node-version: [12.x]
+        os: [macos-latest, windows-latest]
 
     steps:
       - uses: actions/checkout@v2
@@ -23,11 +23,9 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install
         run: npm i -g npminstall && npminstall
-      - name: Unit Test
-        run: |
-          npm run test
-      - name: Code Cov
+      - name: CI Preparation
+        run: npm run ci
         env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-        run: |
-          node_modules/.bin/codecov -t d3793897-58cd-4893-9375-7471e0418ed3
+          CI: true
+      - name: Unit Test
+        run: npm run test

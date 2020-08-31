@@ -1,5 +1,9 @@
 # react-useVerifyCode-hook
 
+![Language](https://img.shields.io/github/languages/top/PenumbraPro/react-useVerifyCode-hook) ![David](https://img.shields.io/david/dev/PenumbraPro/react-useVerifyCode-hook) ![GitHub package.json version](https://img.shields.io/github/package-json/v/PenumbraPro/react-useVerifyCode-hook)
+
+
+
 > 适用于验证码场景的 React Hooks.  
 > React Hooks For Verify Code Sending & Status Controll
 

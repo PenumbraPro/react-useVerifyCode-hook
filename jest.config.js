@@ -4,13 +4,13 @@
 module.exports = {
   clearMocks: true,
   collectCoverage: true,
-  collectCoverageFrom: ["./*.{(js,ts,tsx)}"],
+  collectCoverageFrom: ["./*.ts"],
   coverageDirectory: "coverage",
   coveragePathIgnorePatterns: ["\\\\node_modules\\\\"],
   coverageProvider: "v8",
   coverageReporters: ["json", "text", "lcov", "clover"],
   moduleFileExtensions: ["js", "json", "jsx", "ts", "tsx", "node"],
-  testMatch: ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[tj]s?(x)"],
+  testMatch: ["**/__tests__/**/*.[t]s?(x)", "**/?(*.)+(spec|test).[t]s?(x)"],
   testPathIgnorePatterns: ["\\\\node_modules\\\\"],
   timers: "fake",
   transform: {
